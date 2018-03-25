@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function convertDelimitedText() {
+            var preText = document.getElementById('txtPre').value;
+            var result = preText.replace(/\n/g, ';');  //This is for the enter.            
+            result = result.replace(/\\n/g, ';'); //This for the \n text.
+            document.getElementById('txtPost').value = result;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Pre Reconstruction
+            </td>
+            <td>
+            </td>
+            <td>
+                Post Reconstruction
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="txtPre" rows="15" cols="50"></textarea>
+            </td>
+            <td>
+             <input type="button" id="btnConvert" value=">>>" onclick="convertDelimitedText();" />
+            </td>
+            <td>
+                <textarea id="txtPost" rows="15" cols="50"></textarea>
+            </td>
+        </tr>       
+    </table>
+</body>
+</html>

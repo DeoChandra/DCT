@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+  <b> <u> To copy the sql dbase 'base' to the sql dbase 'copied', there are below different approaches. </u></b> <br /><br />
+
+  1. Take a backup of 'base' databse as .bak file and then restore to a new database named 'copied'. <br />
+
+  2. Generate scripts of all objects such as Table, SP, View etc. of 'base' database including the data amd then create databse named 'copied' and run the script. <br />
+
+  3. Using DBCC commands : DBCC CLONEDATABASE ('base', 'copied').
+
+</body>
+</html>

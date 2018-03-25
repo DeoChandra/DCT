@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var num1 = $("#div_the_1").html();
+            var num2 = $("#div_the_2").html();
+            
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/Sum",                
+                data: "{ num1: '" + num1 + "', num2: '" + num2 + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    disp_the_div_generic(result.d);
+                }
+            });
+
+        });
+
+        function disp_the_div_generic(disp) {
+            alert(disp);
+        }
+       
+    </script>
+</head>
+<body>
+    <div id="div_the_1">
+        2.1</div>
+    <div id="div_the_2">
+        4.3</div>
+</body>
+</html>
